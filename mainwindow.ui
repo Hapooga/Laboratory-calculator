@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>380</width>
+    <height>360</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>380</width>
+    <height>360</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>10000</width>
+    <height>10000</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Lab Calculator</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+color: rgb(0, 0, 0);
+background-color: #009999;
+}
+
+QMenuBar{
+color: rgb(0, 0, 0);
+background-color: #009999;
+selection-color: rgb(85, 255, 0);
+}
+
+QMenuBar::item:selected { 
+background-color: #009999;
+background: #33CCCC;
+}
+
+QMenuBar::item:pressed {
+background: #33CCCC;
+}
+
+ QMenu::item{
+ background-color: #009999;
+color: rgb(0, 0, 0);
+ }
+
+ QMenu::item:selected{
+ background-color: #009999;
+ color: #55ff00;
+ } 
+
+QStatusBar{
+font: 700 10pt &quot;Arial&quot;;
+color: rgb(131, 0, 0);
+}
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="WorkGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1121</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #33CCCC;</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLineEdit" name="formula_input_for_parsing_LineEdit">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>15</y>
+       <width>181</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #ffffff;
+</string>
+     </property>
+     <property name="frame">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="molecular_weight_output_LineEdit">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>45</y>
+       <width>181</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #ffffff;</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="formula_for_parsing_input_label">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>8</x>
+       <y>10</y>
+       <width>161</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Химическая формула</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="molecular_weight_output_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Молекулярный вес</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="molar_solutions_groupBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>350</width>
+       <height>200</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #5CCCCC;
+font: 12pt &quot;Segoe UI&quot;;</string>
+     </property>
+     <property name="title">
+      <string>Молярные растворы</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <widget class="QCheckBox" name="volume_checkBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>25</y>
+        <width>16</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="molar_solutions_volume_Inputlabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>27</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Объем, литр</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="molar_solutions_volume_input_LineEdit">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>50</y>
+        <width>141</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="molar_solution_molar_concentration_Inputlabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>80</y>
+        <width>271</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Молярная концентрация, моль/литр</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="molar_concentration_checkBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>16</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="molar_solutions_molar_concentration_input_LineEdit">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>110</y>
+        <width>141</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="mass_checkBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>16</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="molar_solution_mass_Inputlabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>140</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Масса, грамм</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="molar_solutions_molar_mass_input_LineEdit">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>170</y>
+        <width>141</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="calculate_Button">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>290</y>
+       <width>110</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #0C6460;
+color: #55ff00;</string>
+     </property>
+     <property name="text">
+      <string>Рассчитать</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+     <property name="default">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="clear_Button">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>290</y>
+       <width>110</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #0C6460;
+color: #55ff00;</string>
+     </property>
+     <property name="text">
+      <string>Очистить</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="ligation_groupBox">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>10</y>
+       <width>350</width>
+       <height>200</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #5CCCCC;
+font: 12pt &quot;Segoe UI&quot;;</string>
+     </property>
+     <property name="title">
+      <string>Расчет лигирования</string>
+     </property>
+     <widget class="QLabel" name="ligation_mass_Input_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>37</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Масса вектора, нг</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="ligation_mass_input_LineEdit">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>40</y>
+        <width>110</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ligation_vector_length_Input_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>67</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Длина вектора, п.н.</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="ligation_vector_length_input_LineEdit">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>70</y>
+        <width>110</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ligation_length_insertion_Input_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>97</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Длина вставки, п.н.</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="ligation_length_insertion_Input_LineEdit">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>100</y>
+        <width>110</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ligation_vector_to_insert_ratio_Input_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>128</y>
+        <width>231</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Соотношение вектора к вставке</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="ligation_vector_to_insert_ratio_Input_left_LineEdit">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>132</y>
+        <width>21</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="FormulaInputlabel_14">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>128</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="ligation_vector_to_insert_ratio_Input_right_LineEdit">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>132</y>
+        <width>21</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ligation_insertion_mass_Input_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>167</y>
+        <width>131</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Масса вставки, нг</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="ligation_insertion_mass_Output_LineEdit">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>170</y>
+        <width>110</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="normal_concentration_groupBox">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>10</y>
+       <width>350</width>
+       <height>200</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #5CCCCC;
+font: 12pt &quot;Segoe UI&quot;;</string>
+     </property>
+     <property name="title">
+      <string>Нормальная концентрация</string>
+     </property>
+     <widget class="QLabel" name="normal_concentration_concentration_input_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>37</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Концентрация</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="normal_concentration_concentration_input_LineEdit">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>40</y>
+        <width>110</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="normal_concentration_volume_input_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>78</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Объем, литр</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="normal_concentration_volume_input_LineEdit">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>80</y>
+        <width>110</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="normal_concentration_mass_input_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>118</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Масса, грамм</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="normal_concentration_mass_output_LineEdit">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>120</y>
+        <width>110</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="AdminGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>210</y>
+      <width>380</width>
+      <height>360</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #33CCCC;
+font: 12pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QTableView" name="db_table_output_View">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>10</y>
+       <width>245</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #ffffff;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="db_acid_limit_input_LineEdit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>63</y>
+       <width>110</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="db_equivalent_input_LineEdit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>40</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="db_add_data_input_Button">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>110</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #0C6460;
+font: 9pt &quot;Segoe UI&quot;;
+color: #55ff00;</string>
+     </property>
+     <property name="text">
+      <string>Добавить поле</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="db_formula_Input_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>38</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Формула</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="db_equivalent_input_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Эквивалент</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="db_delete_data_Button">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>110</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #0C6460;
+font: 9pt &quot;Segoe UI&quot;;
+color: #55ff00;</string>
+     </property>
+     <property name="text">
+      <string>Удалить поле</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="db_exit_admin_Button">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>200</y>
+       <width>110</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #0C6460;
+font: 9pt &quot;Segoe UI&quot;;
+color: #55ff00;</string>
+     </property>
+     <property name="text">
+      <string>Выход</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>380</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Меню</string>
+    </property>
+    <addaction name="molar_solutions_menubur"/>
+    <addaction name="normal_concentration_menubur"/>
+    <addaction name="ligation_menubur"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>О программе</string>
+    </property>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="molar_solutions_menubur">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/img/Testtube3x_42171.ico</normaloff>:/img/Testtube3x_42171.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Молярные растворы</string>
+   </property>
+  </action>
+  <action name="normal_concentration_menubur">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/img/medicine_chemical_science_chemistry_laboratory_lab_flask_test_tube_icon_210656.ico</normaloff>:/img/medicine_chemical_science_chemistry_laboratory_lab_flask_test_tube_icon_210656.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Нормальная концентрация</string>
+   </property>
+  </action>
+  <action name="ligation_menubur">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/img/research_structure_strand_science_education_biology_genetics_string_dna_icon_210676.ico</normaloff>:/img/research_structure_strand_science_education_biology_genetics_string_dna_icon_210676.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Расчет лигирования</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
